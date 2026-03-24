@@ -1,76 +1,82 @@
 body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    margin: 0;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0;
+    background: linear-gradient(135deg, #ffe6f0, #e6f7ff);
+    font-family: 'Poppins', sans-serif;
 }
 
 .container {
-    background: #fff;
+    background: #ffffffcc;
+    backdrop-filter: blur(10px);
     padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    width: 300px;
+    border-radius: 20px;
+    width: 320px;
     text-align: center;
+    box-shadow: 0 10px 25px rgba(255, 182, 193, 0.4);
+    border: 2px solid #ffd6e7;
 }
 
 .header h1 {
     margin-bottom: 20px;
-    color: #333;
+    color: #ff8fb1;
+    font-weight: 600;
 }
 
 .input-group {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
     margin-bottom: 20px;
 }
 
 .input-group input {
     padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 16px;
+    border-radius: 12px;
+    border: 1px solid #ffd6e7;
+    background: #fff0f5;
+    font-size: 15px;
+    outline: none;
     transition: 0.2s;
 }
 
 .input-group input:focus {
-    border-color: #4facfe;
-    outline: none;
+    border-color: #ff8fb1;
+    box-shadow: 0 0 8px #ffd6e7;
 }
 
 .button {
     padding: 12px;
     border: none;
-    border-radius: 6px;
-    background: #4facfe;
-    color: white;
-    font-size: 16px;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #ffb6c1, #ffcce0);
+    color: #fff;
+    font-size: 15px;
     cursor: pointer;
     transition: 0.2s;
 }
 
 .button:hover {
-    background: #3a8be0;
+    transform: scale(1.03);
+    background: linear-gradient(135deg, #ff9eb5, #ffbfd6);
 }
 
 .results {
-    margin-top: 15px;
-    background: #f7f7f7;
+    margin-top: 10px;
     padding: 15px;
-    border-radius: 8px;
+    border-radius: 15px;
+    background: #fff5fa;
+    border: 1px dashed #ffcce0;
 }
 
 .results p {
     margin: 8px 0;
-    font-size: 16px;
-    color: #333;
+    color: #555;
 }
 
 .results span {
+    color: #ff8fb1;
     font-weight: bold;
-    color: #4facfe;
 }

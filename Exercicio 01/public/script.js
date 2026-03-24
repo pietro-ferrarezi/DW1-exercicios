@@ -8,6 +8,6 @@ function calcBhaskara() {
     let x1 = (-(b) + delta) / (2 * a)
     let x2 = (-(b) - delta) / (2 * a)
 
-    document.querySelector("#x1").innerText = x1
-    document.querySelector("#x2").innerText = x2
+    document.querySelector("#x1").innerText = Math.round(x1)
+    document.querySelector("#x2").innerText = Math.round(x2)
 }
