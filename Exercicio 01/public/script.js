@@ -3,6 +3,10 @@ function calcBhaskara() {
     let b = document.querySelector("#B").value
     let c = document.querySelector("#C").value
     
+    if (!a || !b || !c) {
+        return alert("Preencha todos os campos para calcular")
+    }
+    
     let calc_delta = (b**2) - (4 * a * c)
     if (calc_delta < 0) {
         return alert("Delta é negativo, não existe raiz real")
