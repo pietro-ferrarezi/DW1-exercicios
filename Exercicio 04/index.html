@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Placar de Jogo</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(135deg, #0a3d91, #1e90ff);
+    }
+
+    h1 {
+      color: white;
+      margin-top: 30px;
+      font-size: 40px;
+    }
+
+    .container {
+      display: flex;
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .card {
+      background: white;
+      color: black;
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+      width: 180px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .card h2 {
+      margin-bottom: 15px;
+    }
+
+    .pontos {
+      font-size: 50px;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      background: #1e90ff;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background: #187bcd;
+    }
+
+    .reset {
+      margin-top: 30px;
+      background: #4da6ff;
+    }
+
+    .reset:hover {
+      background: #3399ff;
+    }
+
+    footer {
+      margin-bottom: 20px;
+      color: black;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Placar de Jogo</h1>
+
+  <div class="container">
+    <div class="card">
+      <h2>Time A</h2>
+      <div class="pontos" id="pontosA">0</div>
+      <button class="btn" onclick="addPonto('A')">+1 Ponto</button>
+    </div>
+
+    <div class="card">
+      <h2>Time B</h2>
+      <div class="pontos" id="pontosB">0</div>
+      <button class="btn" onclick="addPonto('B')">+1 Ponto</button>
+    </div>
+  </div>
+
+  <button class="btn reset" onclick="resetar()">Resetar</button>
+
+  <footer>Controle de Placar</footer>
+
+  <script>
+    let pontosA = 0;
+    let pontosB = 0;
+
+    function addPonto(time) {
+      if (time === 'A') {
+        pontosA++;
+        document.getElementById('pontosA').textContent = pontosA;
+      } else {
+        pontosB++;
+        document.getElementById('pontosB').textContent = pontosB;
+      }
+    }
+
+    function resetar() {
+      pontosA = 0;
+      pontosB = 0;
+      document.getElementById('pontosA').textContent = 0;
+      document.getElementById('pontosB').textContent = 0;
+    }
+  </script>
+
+</body>
+</html>
