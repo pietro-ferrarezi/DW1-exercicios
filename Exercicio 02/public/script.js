@@ -1,10 +1,13 @@
 function calcular() {
-    const peso = document.querySelector("#kg").value 
-    const altura = document.querySelector("#m").value
+    let peso = document.querySelector("#kg").value
+    let altura = document.querySelector("#m").value
 
     if (!peso || !altura) {
         return alert("Adicione todas as informações!")
     }
+
+    peso = peso.replace(",", ".")
+    altura = altura.replace(",", ".")
 
     if (!peso > 0 || !altura > 0) {
         return alert("Dados inválidos")

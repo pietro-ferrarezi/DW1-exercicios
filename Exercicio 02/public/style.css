@@ -16,7 +16,8 @@
     --text: #e5e7eb;
     --text-soft: #9ca3af;
     --input: #1f2937;
-    --border: #374151;
+    --border: #041736;
+    --shadow-intern: #bbd6ff33;
 }
 
 /* Base */
@@ -30,7 +31,7 @@ body {
 }
 
 /* Layout */
-main {
+.container {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -46,7 +47,7 @@ header {
 }
 
 /* Card central */
-.content {
+main {
     margin: auto;
     width: min(90%, 380px);
     background: var(--card);
@@ -126,7 +127,8 @@ header {
     flex-direction: column;
     gap: 0.5rem;
 
-    border: 1px solid var(--border);
+    border: none;
+    box-shadow: 0.7px 0.7px 4px var(--shadow-intern);
 }
 
 .result p {

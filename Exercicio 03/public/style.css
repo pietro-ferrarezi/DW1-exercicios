@@ -1,13 +1,364 @@
-html, body {
-    width: 100%;
-    height: 100%;
-    overflow-x: hidden;
+/* Reset e configurações base */
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+:root {
+--bg-primary: #0a0a0a;
+--bg-secondary: #141414;
+--bg-card: #1a1a1a;
+--text-primary: #ffffff;
+--text-secondary: #a0a0a0;
+--accent: #3b82f6;
+--accent-hover: #2563eb;
+--border: #2a2a2a;
+--success: #22c55e;
+--danger: #ef4444;
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: bisque;
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+background-color: var(--bg-primary);
+color: var(--text-primary);
+min-height: 100vh;
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 2rem 1rem;
+}
+
+/* Header */
+.header {
+text-align: center;
+margin-bottom: 2rem;
+}
+
+.header h1 {
+font-size: 2rem;
+font-weight: 700;
+letter-spacing: -0.02em;
+margin-bottom: 0.5rem;
+}
+
+.header p {
+color: var(--text-secondary);
+font-size: 0.875rem;
+}
+
+/* Seletor de esporte */
+.sport-selector {
+margin-bottom: 2rem;
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 0.5rem;
+}
+
+.sport-selector label {
+font-size: 0.875rem;
+color: var(--text-secondary);
+text-transform: uppercase;
+letter-spacing: 0.05em;
+}
+
+.sport-selector select {
+background-color: var(--bg-card);
+color: var(--text-primary);
+border: 1px solid var(--border);
+border-radius: 0.5rem;
+padding: 0.75rem 1.5rem;
+font-size: 1rem;
+cursor: pointer;
+transition: border-color 0.2s, box-shadow 0.2s;
+min-width: 200px;
+}
+
+.sport-selector select:hover {
+border-color: var(--accent);
+}
+
+.sport-selector select:focus {
+outline: none;
+border-color: var(--accent);
+box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+/* Container do placar */
+.scoreboard {
+background-color: var(--bg-secondary);
+border: 1px solid var(--border);
+border-radius: 1rem;
+padding: 2rem;
+width: 100%;
+max-width: 800px;
+}
+
+/* Informações do esporte */
+.sport-info {
+text-align: center;
+margin-bottom: 2rem;
+padding-bottom: 1rem;
+border-bottom: 1px solid var(--border);
+}
+
+.sport-info h2 {
+font-size: 1.25rem;
+color: var(--accent);
+margin-bottom: 0.25rem;
+}
+
+.sport-info p {
+font-size: 0.75rem;
+color: var(--text-secondary);
+}
+
+/* Grid das equipes */
+.teams-container {
+display: flex;
+justify-content: center;
+align-items: stretch;
+gap: 2rem;
+flex-wrap: wrap;
+}
+
+/* Card da equipe */
+.team-card {
+background-color: var(--bg-card);
+border: 1px solid var(--border);
+border-radius: 0.75rem;
+padding: 1.5rem;
+flex: 1;
+min-width: 280px;
+max-width: 350px;
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 1.5rem;
+}
+
+/* Nome da equipe editável */
+.team-name {
+font-size: 1.25rem;
+font-weight: 600;
+background: transparent;
+border: 1px solid transparent;
+border-radius: 0.375rem;
+padding: 0.5rem 1rem;
+color: var(--text-primary);
+text-align: center;
+width: 100%;
+cursor: pointer;
+transition: border-color 0.2s, background-color 0.2s;
+}
+
+.team-name:hover {
+background-color: var(--bg-secondary);
+border-color: var(--border);
+}
+
+.team-name:focus {
+outline: none;
+background-color: var(--bg-secondary);
+border-color: var(--accent);
+cursor: text;
+}
+
+/* Seção de pontuação */
+.score-section {
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 0.5rem;
+}
+
+.score-label {
+font-size: 0.75rem;
+color: var(--text-secondary);
+text-transform: uppercase;
+letter-spacing: 0.05em;
+}
+
+.score-display {
+display: flex;
+align-items: center;
+gap: 1rem;
+}
+
+.score-value {
+font-size: 4rem;
+font-weight: 700;
+line-height: 1;
+min-width: 100px;
+text-align: center;
+transition: transform 0.15s ease-out, color 0.15s;
+}
+
+.score-value.animate {
+transform: scale(1.1);
+color: var(--accent);
+}
+
+/* Botões de controle */
+.btn {
+display: flex;
+align-items: center;
+justify-content: center;
+width: 48px;
+height: 48px;
+border: none;
+border-radius: 0.5rem;
+font-size: 1.5rem;
+font-weight: 600;
+cursor: pointer;
+transition: transform 0.1s, background-color 0.2s;
+}
+
+.btn:hover {
+transform: scale(1.05);
+}
+
+.btn:active {
+transform: scale(0.95);
+}
+
+.btn-increment {
+background-color: var(--success);
+color: white;
+}
+
+.btn-increment:hover {
+background-color: #16a34a;
+}
+
+.btn-decrement {
+background-color: var(--danger);
+color: white;
+}
+
+.btn-decrement:hover {
+background-color: #dc2626;
+}
+
+/* Seção de sets */
+.sets-section {
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 0.5rem;
+padding-top: 1rem;
+border-top: 1px solid var(--border);
+width: 100%;
+}
+
+.sets-display {
+display: flex;
+align-items: center;
+gap: 0.75rem;
+}
+
+.sets-value {
+font-size: 2rem;
+font-weight: 600;
+min-width: 60px;
+text-align: center;
+transition: transform 0.15s ease-out, color 0.15s;
+}
+
+.sets-value.animate {
+transform: scale(1.1);
+color: var(--accent);
+}
+
+.btn-small {
+width: 36px;
+height: 36px;
+font-size: 1.25rem;
+}
+
+/* Botão de reset */
+.actions {
+margin-top: 2rem;
+display: flex;
+justify-content: center;
+gap: 1rem;
+flex-wrap: wrap;
+}
+
+.btn-reset {
+background-color: var(--bg-card);
+color: var(--text-primary);
+border: 1px solid var(--border);
+padding: 0.75rem 1.5rem;
+border-radius: 0.5rem;
+font-size: 0.875rem;
+font-weight: 500;
+cursor: pointer;
+transition: background-color 0.2s, border-color 0.2s;
+width: auto;
+height: auto;
+}
+
+.btn-reset:hover {
+background-color: var(--bg-secondary);
+border-color: var(--accent);
+}
+
+/* Separador VS */
+.vs-separator {
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 1.5rem;
+font-weight: 700;
+color: var(--text-secondary);
+}
+
+/* Footer */
+.footer {
+margin-top: 2rem;
+text-align: center;
+color: var(--text-secondary);
+font-size: 0.75rem;
+}
+
+/* Responsividade */
+@media (max-width: 640px) {
+body {
+    padding: 1rem 0.5rem;
+}
+
+.header h1 {
+    font-size: 1.5rem;
+}
+
+.scoreboard {
+    padding: 1rem;
+}
+
+.teams-container {
+    gap: 1rem;
+}
+
+.team-card {
+    min-width: 100%;
+    padding: 1rem;
+}
+
+.score-value {
+    font-size: 3rem;
+    min-width: 80px;
+}
+
+.btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.25rem;
+}
+
+.vs-separator {
+    width: 100%;
+    padding: 0.5rem 0;
+}
 }

@@ -1,13 +1,125 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../public/style.css">
-    <script src="../public/script.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Placar Esportivo</title>
+  
+  <link rel="stylesheet" href="../public/style.css">
 </head>
 <body>
-    
+
+  <!-- ==================== HTML ==================== -->
+  
+  <!-- Cabeçalho -->
+  <header class="header">
+    <h1>Placar Esportivo</h1>
+    <p>Controle de pontuação para diversos esportes</p>
+  </header>
+
+  <!-- Seletor de esporte -->
+  <div class="sport-selector">
+    <label for="sport-select">Selecione o esporte</label>
+    <select id="sport-select">
+      <option value="volei">Voleibol</option>
+      <option value="beach-tennis">Beach Tennis</option>
+      <option value="tenis-mesa">Tenis de Mesa</option>
+      <option value="generico">Generico</option>
+    </select>
+  </div>
+
+  <!-- Placar principal -->
+  <main class="scoreboard">
+    <!-- Informacoes do esporte -->
+    <div class="sport-info">
+      <h2 id="sport-title">Voleibol</h2>
+      <p id="sport-rules">Sets ate 25 pontos | Melhor de 5 sets</p>
+    </div>
+
+    <!-- Container das equipes -->
+    <div class="teams-container">
+      <!-- Equipe 1 -->
+      <div class="team-card">
+        <input 
+          type="text" 
+          class="team-name" 
+          id="team1-name" 
+          value="Equipe A" 
+          maxlength="20"
+          aria-label="Nome da equipe 1"
+        >
+        
+        <!-- Pontuacao -->
+        <div class="score-section">
+          <span class="score-label">Pontos</span>
+          <div class="score-display">
+            <button class="btn btn-decrement" onclick="updateScore(1, -1)" aria-label="Diminuir pontos equipe 1">−</button>
+            <span class="score-value" id="team1-score">0</span>
+            <button class="btn btn-increment" onclick="updateScore(1, 1)" aria-label="Aumentar pontos equipe 1">+</button>
+          </div>
+        </div>
+
+        <!-- Sets -->
+        <div class="sets-section">
+          <span class="score-label">Sets</span>
+          <div class="sets-display">
+            <button class="btn btn-small btn-decrement" onclick="updateSets(1, -1)" aria-label="Diminuir sets equipe 1">−</button>
+            <span class="sets-value" id="team1-sets">0</span>
+            <button class="btn btn-small btn-increment" onclick="updateSets(1, 1)" aria-label="Aumentar sets equipe 1">+</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Separador VS -->
+      <div class="vs-separator">VS</div>
+
+      <!-- Equipe 2 -->
+      <div class="team-card">
+        <input 
+          type="text" 
+          class="team-name" 
+          id="team2-name" 
+          value="Equipe B" 
+          maxlength="20"
+          aria-label="Nome da equipe 2"
+        >
+        
+        <!-- Pontuacao -->
+        <div class="score-section">
+          <span class="score-label">Pontos</span>
+          <div class="score-display">
+            <button class="btn btn-decrement" onclick="updateScore(2, -1)" aria-label="Diminuir pontos equipe 2">−</button>
+            <span class="score-value" id="team2-score">0</span>
+            <button class="btn btn-increment" onclick="updateScore(2, 1)" aria-label="Aumentar pontos equipe 2">+</button>
+          </div>
+        </div>
+
+        <!-- Sets -->
+        <div class="sets-section">
+          <span class="score-label">Sets</span>
+          <div class="sets-display">
+            <button class="btn btn-small btn-decrement" onclick="updateSets(2, -1)" aria-label="Diminuir sets equipe 2">−</button>
+            <span class="sets-value" id="team2-sets">0</span>
+            <button class="btn btn-small btn-increment" onclick="updateSets(2, 1)" aria-label="Aumentar sets equipe 2">+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Botoes de acao -->
+    <div class="actions">
+      <button class="btn-reset" onclick="resetScore()">Resetar Pontos</button>
+      <button class="btn-reset" onclick="resetSets()">Resetar Sets</button>
+      <button class="btn-reset" onclick="resetAll()">Resetar Tudo</button>
+    </div>
+  </main>
+
+  <!-- Rodape -->
+  <footer class="footer">
+    <p>Dados salvos automaticamente no navegador</p>
+  </footer>
+
+  <script src="../public/script.js" defer></script>
+
 </body>
 </html>
