@@ -39,23 +39,23 @@ function calc_ma() {
     const n4 = parseFloat(document.querySelector("#i-n4").value)
     const me = parseFloat(document.querySelector("#i-me").value)
 
-    if (!n1 || isNaN(n1)) {
+    if (!n1 || isNaN(n1) || n1 < 0 || n1 > 10) {
         document.querySelector("#i-n1").focus()
         return alert("Nota 1 inválida!")
     }
-    if (!n2 || isNaN(n2)) {
+    if (!n2 || isNaN(n2) || n2 < 0 || n2 > 10) {
         document.querySelector("#i-n2").focus()
         return alert("Nota 2 inválida!")
     }
-    if (!n3 || isNaN(n3)) {
+    if (!n3 || isNaN(n3) || n3 < 0 || n3 > 10) {
         document.querySelector("#i-n3").focus()
         return alert("Nota 3 inválida!")
     }
-    if (!n4 || isNaN(n2)) {
+    if (!n4 || isNaN(n2) || n4 < 0 || n4 > 10) {
         document.querySelector("#i-n4").focus()
         return alert("Nota 4 inválida!")
     }
-    if (!me || isNaN(me)) {
+    if (!me || isNaN(me) || me < 0 || me > 10) {
         document.querySelector("#i-me").focus()
         return alert("Média dos exercícios inválida!")
     }
