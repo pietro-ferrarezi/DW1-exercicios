@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Conceito</title>
+    <script src="../public/script.js"></script>
+    <link rel="stylesheet" href="../public/style.css">
+</head>
+<body>
+    <header>
+        <h1>Calculadora de Conceito Acadêmico</h1>
+    </header>
+    <main>
+        <div class="card input">
+            <h2>Insira suas informações:</h2>
+            <div class="field">
+                <input type="text" name="ra" id="i-ra" placeholder="" required>
+                <label for="ra">Ra</label>
+            </div>
+            <div class="field">
+                <input type="text" name="nome" id="i-nome" placeholder="" required>
+                <label for="nome">Nome Completo</label>
+            </div>
+            <div class="field">
+                <input type="text" name="n1" id="i-n1" placeholder="" required>
+                <label for="n1">Nota na avaliação 01</label>
+            </div>
+            <div class="field">
+                <input type="text" name="n2" id="i-n2" placeholder="" required>
+                <label for="n2">Nota na avaliação 02</label>
+            </div>
+            <div class="field">
+                <input type="text" name="n3" id="i-n3" placeholder="" required>
+                <label for="n3">Nota na avaliação 03</label>
+            </div>
+            <div class="field">
+                <input type="text" name="n4" id="i-n4" placeholder="" required>
+                <label for="n4">Nota na avaliação 04</label>
+            </div>
+            <div class="field">
+                <input type="text" name="me" id="i-me" placeholder="" required>
+                <label for="me">Média dos exercícios</label>
+            </div>
+            
+            <button onclick="calcular()">Calcular</button>
+        </div>
+        <div class="card output">
+            <h2>Informações do aluno</h2>
+            <p>Registro acadêmico: <span id="o-ra">------</span></p>
+            <p>Nome completo: <span id="o-nome">------</span></p>
+            <p>Notas:</p>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Avaliação 01</th>
+                        <th>Avaliação 02</th>
+                        <th>Avaliação 03</th>
+                        <th>Avaliação 04</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span id="o-n1">0.0</span></td>
+                        <td><span id="o-n2">0.0</span></td>
+                        <td><span id="o-n3">0.0</span></td>
+                        <td><span id="o-n4">0.0</span></td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Média nos exercícios: <span id="o-me">------</span></p>
+            <hr>
+            <h2>Resultados:</h2>
+            <p>Média de aproveitamento: <span id="o-ma">------</span></p>
+            <p>Conceito: <span id="o-conceito">------</span></p>
+            <p>Resultado: <span id="o-resultado">------</span></p>
+        </div>
+    </main>
+</body>
+</html>

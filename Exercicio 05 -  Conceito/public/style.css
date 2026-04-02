@@ -1,0 +1,212 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Roboto, sans-serif;
+}
+
+/* Fundo */
+body {
+    background: #0f0f14;
+    color: #e4e4e7;
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 30px 20px 10px;
+}
+
+header h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #c084fc;
+}
+
+/* Layout */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 25px;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+/* Cards */
+.card {
+    background: #18181f;
+    border-radius: 16px;
+    height: min-content;
+    padding: 25px;
+    width: max-content;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+/* Títulos */
+.card h2 {
+    margin-bottom: 20px;
+    color: #c084fc;
+    font-weight: 600;
+}
+
+/* Inputs */
+label {
+    display: block;
+    margin-top: 12px;
+    font-size: 0.9rem;
+    color: #a1a1aa;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 8px;
+    border: 1px solid #2a2a33;
+    background: #0f0f14;
+    color: #e4e4e7;
+    transition: 0.2s;
+}
+
+input:focus {
+    border-color: #a855f7;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(168,85,247,0.2);
+}
+
+/* Botão */
+button {
+    margin-top: 18px;
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #7c3aed, #a855f7);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: 0.2s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(168,85,247,0.4);
+}
+
+/* Output textos */
+.output p {
+    margin-top: 10px;
+    font-size: 0.95rem;
+}
+
+.output span {
+    color: #c084fc;
+    font-weight: 600;
+}
+
+/* Tabela corrigida */
+table {
+    width: 100%;
+    margin-top: 10px;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+/* Cabeçalho da tabela */
+th {
+    background: #27272f;
+    color: #c084fc;
+    font-weight: 500;
+}
+
+/* Corpo */
+td {
+    background: #1c1c24;
+    color: #e4e4e7;
+}
+
+/* Zebra effect */
+tbody tr:nth-child(even) td {
+    background: #20202a;
+}
+
+/* Linha separadora */
+hr {
+    margin: 15px 0;
+    border: none;
+    height: 1px;
+    background: #2a2a33;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .card {
+        width: 100%;
+        max-width: 400px;
+    }
+}
+
+.field {
+    position: relative;
+    margin-top: 18px;
+}
+
+/* Input */
+.field input {
+    width: 100%;
+    padding: 16px 12px;
+    border-radius: 12px;
+    border: 1px solid #2a2a33;
+    background: #0f0f14;
+    color: #e4e4e7;
+    font-size: 0.95rem;
+    outline: none;
+    transition: all 0.25s ease;
+}
+
+/* Label base */
+.field label {
+    position: absolute;
+    left: 12px;
+    top: 15%;
+    color: #71717a;
+    font-size: 0.95rem;
+    background: transparent;
+    pointer-events: none;
+    transition: all 0.2s ease;
+}
+
+/* Estado ativo (FOCO ou digitado) */
+.field input:focus + label,
+.field input:not(:placeholder-shown) + label {
+    top: -25%;
+    left: 10px;
+    font-size: 0.75rem;
+    padding: 0 6px;
+    background: #18181f; /* mesma cor do card */
+    color: #a855f7;
+    border-radius: 6px;
+}
+
+/* Foco no input */
+.field input:focus {
+    border-color: #a855f7;
+    box-shadow: 0 0 0 2px rgba(168,85,247,0.25);
+}
+
+/* Hover leve */
+.field input:hover {
+    border-color: #3a3a45;
+}
