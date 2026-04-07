@@ -1,0 +1,178 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #0f0f14, #1a1a2e);
+    color: #e4e4e7;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Layout */
+.container {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+/* Cards */
+.card {
+    background: rgba(30, 30, 40, 0.9);
+    border: 1px solid rgba(120, 80, 255, 0.2);
+    border-radius: 16px;
+    padding: 25px;
+    width: 320px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+}
+
+/* Título */
+h1 {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    color: #a78bfa;
+}
+
+/* Inputs */
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0 15px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    background: #111;
+    color: #fff;
+    outline: none;
+    transition: 0.2s;
+}
+
+input[type="number"]:focus {
+    border-color: #8b5cf6;
+    box-shadow: 0 0 5px #8b5cf6;
+}
+
+/* Checkbox */
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+/* Botão */
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #7c3aed, #a855f7);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+    margin-top: 1vh;
+}
+
+button:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.6);
+}
+
+/* Resultado */
+.resultado {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.resultado h2 {
+    margin: 10px 0;
+    font-size: 2rem;
+    color: #c084fc;
+}
+
+/* Responsivo */
+@media (max-width: 700px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Remove setas no Chrome, Safari, Edge */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Remove setas no Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+/* Esconde checkbox original */
+.checkbox-group input[type="checkbox"] {
+    display: none;
+}
+
+/* Caixa custom */
+.checkbox-group label {
+    position: relative;
+    padding-left: 28px;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Quadrado */
+.checkbox-group label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 2px;
+    width: 18px;
+    height: 18px;
+    border-radius: 5px;
+    background: #111;
+    border: 2px solid #444;
+    transition: 0.3s;
+}
+
+/* Quando marcado: muda cor e glow, sem check */
+.checkbox-group input[type="checkbox"]:checked + label::before {
+    background: linear-gradient(135deg, #7c3aed, #a855f7);
+    border-color: #a855f7;
+    box-shadow: 0 0 8px rgba(168, 85, 247, 0.7);
+}
+
+/* Remove o ::after */
+.checkbox-group input[type="checkbox"]:checked + label::after {
+    content: none;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0 15px;
+    border-radius: 10px;
+    border: 1px solid #2a2a3a;
+    background: #0c0c12;
+    color: #e4e4e7;
+    outline: none;
+    transition: all 0.25s ease;
+}
+
+/* Glow roxo ao focar */
+input[type="number"]:focus {
+    border-color: #8b5cf6;
+    box-shadow: 0 0 12px rgba(139, 92, 246, 0.5);
+    background: #0f0f18;
+}
