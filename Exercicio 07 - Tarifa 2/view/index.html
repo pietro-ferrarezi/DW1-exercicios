@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estacionaqui!</title>
+    <link rel="stylesheet" href="../public/style.css">
+</head>
+<body>
+    <main class="container">
+        <div class="card">
+
+            <h1>Calculadora de tarifa</h1>
+
+            <label for="checkin">Checkin</label>
+            <input type="datetime-local" name="checkin" id="checkin"><br>
+            <label for="checkout">Checkout</label>
+            <input type="datetime-local" name="checkout" id="checkout"><br>
+
+            <div class="checkbox-group">
+                <input type="checkbox" name="veiculo_grande" id="veiculo_grande">
+                <label for="veiculo_grande">Veículo grande</label>
+            </div>
+
+            <div class="checkbox-group">
+                <input type="checkbox" name="cliente_frequente" id="cliente_frequente">
+                <label for="cliente_frequente">Cliente frequente</label>
+            </div>
+
+            <button onclick="calc_tarifa()">Calcular</button>
+
+        </div>
+
+        <div class="card resultado">
+
+            <p>Preço da tarifa</p>
+            <h2>R$ <span id="preco">0,00</span></h2>
+
+            <p>
+                <span id="diarias">0</span> diárias • 
+                <span id="horas">0</span> horas
+            </p>
+
+        </div>
+    </main>
+
+    <script src="../public/script.js"></script>
+</body>
+</html>
