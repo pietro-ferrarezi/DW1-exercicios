@@ -1,0 +1,60 @@
+body {
+    font-family: "Times New Roman", serif;
+    background: #eaeaea;
+    margin: 0;
+    padding: 40px;
+}
+
+/* Caixa do documento */
+#documento {
+    background: white;
+    max-width: 700px;
+    margin: auto;
+    padding: 40px;
+    border: 3px double #000;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+/* Título */
+h1 {
+    text-align: center;
+    font-size: 22px;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+/* Texto da autorização */
+#textoAutorizacao {
+    font-size: 18px;
+    line-height: 1.8;
+    text-align: justify;
+    text-indent: 40px;
+}
+
+/* Assinatura */
+.assinatura {
+    margin-top: 60px;
+    text-align: center;
+}
+
+.assinatura p {
+    margin: 5px 0;
+}
+
+/* Linha da assinatura */
+.linha {
+    margin: 40px auto 10px auto;
+    width: 300px;
+    border-top: 1px solid #000;
+}
+
+/* Responsividade simples */
+@media (max-width: 600px) {
+    #documento {
+        padding: 20px;
+    }
+
+    #textoAutorizacao {
+        font-size: 16px;
+    }
+}
